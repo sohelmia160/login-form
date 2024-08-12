@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Login</h1>
+        <form action="">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <div class="input-fields">
+                    <input type="text" name="username" id="username" placeholder="Username" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-fields">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
+                    <i class='bx bx-show' id="hideShow"></i>
+                </div>
+            </div>
+            <button type="button" class="login-btn" id="login">Login</button>
+        </form>
+    </div>
+
+    <script>
+        const hideShow = document.getElementById("hideShow");
+        const password = document.getElementById("password");
+
+        hideShow.addEventListener("click", function () {
+            if (password.type === 'password') {
+                password.type = "text";
+                this.classList.replace('bx-show', 'bx-hide');
+            } else {
+                password.type = "password";
+                this.classList.replace('bx-hide', 'bx-show');
+            }
+        });
+    </script>
+</body>
+
+</html>
